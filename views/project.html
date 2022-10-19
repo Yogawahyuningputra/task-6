@@ -1,0 +1,104 @@
+<html>
+    <!DOCTYPE html>
+    <head>
+        <title>Add Project</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/cerulean/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+        <link rel="stylesheet" href="/public/css/style.css">
+    </head>
+    <nav class="navbar navbar-expand-lg bg-secondary">
+        <div class="container-fluid">
+              <a class="navbar-brand" href="/index">
+                <img src="https://dumbways.id/assets/images/brandred.png" alt="Dumbways.id" width="60" height="45">
+              </a>          
+            <div class="collapse navbar-collapse" id="navbarNav" >
+                <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active text-dark" aria-current="page" href="/index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active text-dark" href="/project">Add Project</a>
+                </li>
+                </ul>
+          </div>
+          <div class="nav-item">
+            <a href="/contact"><button type="button" class="btn btn-dark">Contact Me</button></a>
+          </div>
+        </div>
+      </nav>
+
+      <body background="public/img/bg-so-serious-white.png">
+        <div>            
+            <form method="POST" action="/project">
+                <div><p>Add My Project</p></div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col">
+                        <label for="exampleInputEmail1" class="form-label">Project Name</label>
+                          <input type="text" class="form-control" name="input-project" id="input-project" placeholder="Project Name">
+                        </div>
+                   </div>
+                    <div class="row g-3">
+                    <div class="col">
+                        <label for="input-star-date" class="form-label">Star Date</label>
+                      <input type="date" class="form-control" name="input-star-date" id="input-star-date" placeholder="Star Date" aria-label="Star Date">
+                    </div>
+                    <div class="col">
+                        <label for="input-end-date" class="form-label">Last Date</label>
+                      <input type="date" class="form-control"  name="input-end-date" id="input-end-date" placeholder="End Date" aria-label="End Date">
+                    </div>
+                  </div>                       
+                 <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="checkbox1" id="checkbox1" value="Node js">
+                    <label class="form-check-label" for="inlineCheckbox1"><i class="fa-brands fa-node-js"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="checkbox2" id="checkbox2" value="Java">
+                    <label class="form-check-label" for="inlineCheckbox2"><i class="fa-brands fa-java"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="checkbox3" id="checkbox3" value="React Js">
+                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-react"></i></label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="checkbox4" id="checkbox4" value="Golang">
+                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-golang"></i></label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" placeholder="Leave a description here" name="input-content" id="input-content"></textarea>
+                    <label for="floatingTextarea">Description</label>
+                  </div>
+                  <div class="input-image-content">
+                    <label for="input-blog-image" class="form-label">Upload images</label>
+                    <input class="form-control" type="file"  name="input-image" id="input-image" value="images">
+                  </div>
+                  <div>
+                    <p></p><button type="submit" class="btn btn-primary">Submit</button></p>
+                  </div>
+                  </div>
+             </form>
+            </div>
+            <div class="card" style="width: 400px;">
+              <div class="card-body">
+                  <div class="card-img">
+                      <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">  
+              </div>            
+                  <a href="/detailproject" target="_blank"><h2>Dumbways Project</h2></a>
+                  <p class="card-text">Duration</p>
+              </div>
+              <div class="list-group list-group-flush">
+                  <p class="list-group-content">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <p class="list-group-tekno">Technology</p>
+              </div>
+              <div class="card-body">
+                  <a href="#" class="card-link"><button class="btn btn-dark">Edit</button></a>                            
+                  <a href="#" class="card-link"><button class="btn btn-dark">Delete</button></a>
+              </div>
+          </div>  
+          </div>
+        </body>
+    <!-- <script src="script.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js">
+    </script>
+</html> 
