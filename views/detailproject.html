@@ -28,18 +28,20 @@
       </nav>             
 
       <body background="/public/img/bg-so-serious-white.png">
-      <div class="card-detail">
-            <div class="card-title"><h5>Pasar Coding di Indonesia Dinilai Masih Menjanjikan</h5>
+      <div style="text-align: center;" class="card-detail">
+            <div class="card-title">
+              <h5>{{.Project.Name}}</h5>
             </div>
-                 <img src="/public/img/dumbways.jpg" style="max-width: 700px;" class="card-img-top" alt="images">
-            <div class="card-body">
-              <p> Ketimpangan sumber daya manusia (SDM) di sektor digital masih
-                menjadi isu yang belum terpecahkan. Berdasarkan penelitian
-                ManpowerGroup, ketimpangan SDM global, termasuk Indonesia,
-                meningkat dua kali lipat dalam satu dekade terakhir.</p>
+            <div class="author">
+              {{.Project.Post_date}} | {{.Project.Author}}
             </div>
-        </div>
-    
+            <div>
+              <img src="/public/img/dumbways.jpg" style="width: 100%;" class="card-img-top" alt="images">           
+            </div>
+      </div>
+            <div style="text-align:justify" class="card-body">
+              <p> {{.Project.Content}}</p>
+            </div>    
 
     </body>
 </html>

@@ -74,28 +74,109 @@
                     <input class="form-control" type="file"  name="input-image" id="input-image" value="images">
                   </div>
                   <div>
-                    <p></p><button type="submit" class="btn btn-primary">Submit</button></p>
+                  <button style="margin-top: 30px; width:   30%;" type="submit" class="btn btn-dark">Submit</button>
                   </div>
                   </div>
              </form>
             </div>
-            <div class="card" style="width: 400px;">
-              <div class="card-body">
-                  <div class="card-img">
-                      <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">  
-              </div>            
-                  <a href="/detailproject" target="_blank"><h2>Dumbways Project</h2></a>
-                  <p class="card-text">Duration</p>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              {{range $index, $data := .Projects}}
+              <div class="col">
+                <div class="card">
+                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/detailproject/{{$index}}">Dumbways Web App</h5></a>
+                    {{$data.Name}}
+                    <h6 class="card-duration">Durasi</h6>
+                    {{$data.Post_date}} | {{data.Author}}
+                    <p class="card-text">
+                      {{$data.Content}}
+                    </p>
+                    <div class="card-select">
+                            <h6>Technology</h6>
+                            <i class="fa-brands fa-node-js fa-2x"></i>             
+                            <i class="fa-brands fa-react fa-2x"></i>
+                            <i class="fa-brands fa-java fa-2x"></i>
+                            <i class="fa-brands fa-golang fa-2x"></i>
+                            <p>
+                      </div>
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-dark" type="button">Edit  </button>
+                        <button class="btn btn-dark" type="button">delete</button>
+                      </div>
+                   </div>
+                </div>
               </div>
-              <div class="list-group list-group-flush">
-                  <p class="list-group-content">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <p class="list-group-tekno">Technology</p>
+            
+              <div class="col">
+                <div class="card">
+                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
+                    <h6 class="card-duration">Durasi</h6>
+                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                      <div class="card-select">
+                            <h6>Technology</h6>
+                            <i class="fa-brands fa-node-js fa-2x"></i>             
+                            <i class="fa-brands fa-react fa-2x"></i>
+                            <i class="fa-brands fa-java fa-2x"></i>
+                            <i class="fa-brands fa-golang fa-2x"></i>
+                            <p>
+                      </div>
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-dark" type="button">Edit  </button>
+                        <button class="btn btn-dark" type="button">delete</button>
+                      </div>
+                   </div>
+                </div>
               </div>
-              <div class="card-body">
-                  <a href="#" class="card-link"><button class="btn btn-dark">Edit</button></a>                            
-                  <a href="#" class="card-link"><button class="btn btn-dark">Delete</button></a>
+              <div class="col">
+                <div class="card">
+                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
+                    <h6 class="card-duration">Durasi</h6>
+                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                      <div class="card-select">
+                            <h6>Technology</h6>
+                            <i class="fa-brands fa-node-js fa-2x"></i>             
+                            <i class="fa-brands fa-react fa-2x"></i>
+                            <i class="fa-brands fa-java fa-2x"></i>
+                            <i class="fa-brands fa-golang fa-2x"></i>
+                            <p>
+                      </div>
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-dark" type="button">Edit  </button>
+                        <button class="btn btn-dark" type="button">delete</button>
+                      </div>
+                   </div>
+                </div>
               </div>
-          </div>  
+              <div class="col">
+                <div class="card">
+                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
+                    <h6 class="card-duration">Durasi</h6>
+                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                      <div class="card-select">
+                            <h6>Technology</h6>
+                            <i class="fa-brands fa-node-js fa-2x"></i>             
+                            <i class="fa-brands fa-react fa-2x"></i>
+                            <i class="fa-brands fa-java fa-2x"></i>
+                            <i class="fa-brands fa-golang fa-2x"></i>
+                            <p>
+                      </div>
+                      <div class="d-grid gap-2 col-6 mx-auto">
+                        <button class="btn btn-dark" type="button">Edit  </button>
+                        <button class="btn btn-dark" type="button">delete</button>
+                      </div>
+                   </div>
+                </div>
+              </div>
+             </div>
+            </div> 
+            {{end}} 
           </div>
         </body>
     <!-- <script src="script.js"></script> -->
