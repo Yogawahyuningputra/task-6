@@ -2,12 +2,14 @@ package main
 
 
 import (
+	"day-9/connection"
 	"fmt"
 	"html/template"
 	"log"
 	"net/http"
 	"strconv"
 	"time"
+	"context"
 
 	"github.com/gorilla/mux"
 )
@@ -16,6 +18,7 @@ var Data = map[string]interface{}{
 	"Name": "Personal Web",
 }
 type Project struct {
+	Id			int
 	Name		string
 	Post_date	string
 	Author		string
@@ -34,6 +37,7 @@ var Projects =[]Project{
 	Content		:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
 	Technology	:"Golang",
 	},
+
 	
 
 
@@ -41,13 +45,17 @@ var Projects =[]Project{
 
 
 func main() {
+	connection.DatabaseConnect()
+	
 	route := mux.NewRouter()
+	
+
 	route.PathPrefix("/public/").Handler(http.StripPrefix("/public/", http.FileServer(http.Dir("./public")) ))
 		
-	route.HandleFunc("/hello", helloWorld).Methods("GET")
+	
 	route.HandleFunc("/", home).Methods("GET")
-	route.HandleFunc("/project", project).Methods("GET")
 	route.HandleFunc("/index", index).Methods("GET")
+	route.HandleFunc("/project", project).Methods("GET")	
 	route.HandleFunc("/contact", contact).Methods("GET")
 	route.HandleFunc("/detailproject", detailProject).Methods("GET")
 	route.HandleFunc("/project", addProject).Methods("POST")
@@ -57,9 +65,7 @@ func main() {
 	http.ListenAndServe("localhost:5000", route)
 }
 
-func helloWorld (w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("Hello world!"))
-}
+
 
 func home(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/html; charset=utf-8")
@@ -131,21 +137,43 @@ func detailProject (w http.ResponseWriter, r *http.Request) {
 		"Project": DetailProject,
 	}
 	
-
+	// fmt.Println(data)
 	w.WriteHeader(http.StatusOK)
 	 tmpl.Execute(w, data)
 }
 
 func project(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-type", "text/html; charset=utf-8")
-	var tmpl, err = template.ParseFiles("views/project.html")
+	fmt.Println(Projects)
+	var tmpl, err = template.ParseFiles("views/index.html")
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("message : " + err.Error()))
 		return
 	}
+
+	rows, _ := connection.Conn.Query(context.Background(), "SELECT id, name, content FROM tb_project")
+
+	var result []Project
+
+	for rows.Next() {
+		var each = Project{}
+
+		err := rows.Scan(&each.Id, &each.Name, &each.Content)
+		if err != nil {
+			fmt.Println(err.Error())
+			return
+		}
+
+		each.Author = "Yoga"
+		
+		result = append(result, each)
+	}
+
+	fmt.Println(rows)
+
 	respData := map[string]interface{}{
-		"Projects": Projects,
+		"Blogs": result,
 	}
 	w.WriteHeader(http.StatusOK)
 	tmpl.Execute(w, respData)
@@ -177,7 +205,7 @@ func addProject(w http.ResponseWriter, r *http.Request) {
 		Content: content,
 		Author: "Yoga",
 		Post_date: time.Now().String(),
-		Technology: "Golang",
+		
 
 	}
 	Projects = append(Projects, newProject)

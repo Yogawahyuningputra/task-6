@@ -48,21 +48,21 @@
                       <input type="date" class="form-control"  name="input-end-date" id="input-end-date" placeholder="End Date" aria-label="End Date">
                     </div>
                   </div>                       
-                 <div class="form-check form-check-inline">
+                 <div class="form-check form-check-inline" style="margin-top: 20px; margin-bottom: 20px;">
                     <input class="form-check-input" type="checkbox" name="checkbox1" id="checkbox1" value="Node js">
-                    <label class="form-check-label" for="inlineCheckbox1"><i class="fa-brands fa-node-js"></i></label>
+                    <label class="form-check-label" for="inlineCheckbox1"><i class="fa-brands fa-node-js fa-2x"></i></label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="checkbox2" id="checkbox2" value="Java">
-                    <label class="form-check-label" for="inlineCheckbox2"><i class="fa-brands fa-java"></i></label>
+                    <label class="form-check-label" for="inlineCheckbox2"><i class="fa-brands fa-java fa-2x"></i></label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="checkbox3" id="checkbox3" value="React Js">
-                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-react"></i></label>
+                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-react fa-2x"></i></label>
                   </div>
                   <div class="form-check form-check-inline">
                     <input class="form-check-input" type="checkbox" name="checkbox4" id="checkbox4" value="Golang">
-                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-golang"></i></label>
+                    <label class="form-check-label" for="inlineCheckbox3"><i class="fa-brands fa-golang fa-2x"></i></label>
                   </div>
 
                   <div class="form-floating">
@@ -76,107 +76,9 @@
                   <div>
                   <button style="margin-top: 30px; width:   30%;" type="submit" class="btn btn-dark">Submit</button>
                   </div>
-                  </div>
+                </div>
+              </div>
              </form>
-            </div>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-              {{range $index, $data := .Projects}}
-              <div class="col">
-                <div class="card">
-                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="/detailproject/{{$index}}">Dumbways Web App</h5></a>
-                    {{$data.Name}}
-                    <h6 class="card-duration">Durasi</h6>
-                    {{$data.Post_date}} | {{data.Author}}
-                    <p class="card-text">
-                      {{$data.Content}}
-                    </p>
-                    <div class="card-select">
-                            <h6>Technology</h6>
-                            <i class="fa-brands fa-node-js fa-2x"></i>             
-                            <i class="fa-brands fa-react fa-2x"></i>
-                            <i class="fa-brands fa-java fa-2x"></i>
-                            <i class="fa-brands fa-golang fa-2x"></i>
-                            <p>
-                      </div>
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-dark" type="button">Edit  </button>
-                        <button class="btn btn-dark" type="button">delete</button>
-                      </div>
-                   </div>
-                </div>
-              </div>
-            
-              <div class="col">
-                <div class="card">
-                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
-                    <h6 class="card-duration">Durasi</h6>
-                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      <div class="card-select">
-                            <h6>Technology</h6>
-                            <i class="fa-brands fa-node-js fa-2x"></i>             
-                            <i class="fa-brands fa-react fa-2x"></i>
-                            <i class="fa-brands fa-java fa-2x"></i>
-                            <i class="fa-brands fa-golang fa-2x"></i>
-                            <p>
-                      </div>
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-dark" type="button">Edit  </button>
-                        <button class="btn btn-dark" type="button">delete</button>
-                      </div>
-                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
-                    <h6 class="card-duration">Durasi</h6>
-                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      <div class="card-select">
-                            <h6>Technology</h6>
-                            <i class="fa-brands fa-node-js fa-2x"></i>             
-                            <i class="fa-brands fa-react fa-2x"></i>
-                            <i class="fa-brands fa-java fa-2x"></i>
-                            <i class="fa-brands fa-golang fa-2x"></i>
-                            <p>
-                      </div>
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-dark" type="button">Edit  </button>
-                        <button class="btn btn-dark" type="button">delete</button>
-                      </div>
-                   </div>
-                </div>
-              </div>
-              <div class="col">
-                <div class="card">
-                  <img src="/public/img/dumbways.jpg" class="card-img-top" alt="images">
-                  <div class="card-body">
-                    <h5 class="card-title"><a href="/detailproject">Dumbways Web App</h5></a>
-                    <h6 class="card-duration">Durasi</h6>
-                    <p class="card-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                      <div class="card-select">
-                            <h6>Technology</h6>
-                            <i class="fa-brands fa-node-js fa-2x"></i>             
-                            <i class="fa-brands fa-react fa-2x"></i>
-                            <i class="fa-brands fa-java fa-2x"></i>
-                            <i class="fa-brands fa-golang fa-2x"></i>
-                            <p>
-                      </div>
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button class="btn btn-dark" type="button">Edit  </button>
-                        <button class="btn btn-dark" type="button">delete</button>
-                      </div>
-                   </div>
-                </div>
-              </div>
-             </div>
-            </div> 
-            {{end}} 
           </div>
         </body>
     <!-- <script src="script.js"></script> -->
